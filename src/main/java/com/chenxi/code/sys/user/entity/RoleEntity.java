@@ -1,4 +1,4 @@
-package com.chenxi.code.sys.role.entity;
+package com.chenxi.code.sys.user.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -10,7 +10,6 @@ import java.io.Serializable;
 import java.util.Collection;
 
 @Data
-@TableName("role")
 public  class RoleEntity implements Serializable  {
         private static final long serialVersionUID = 825384782616737527L;
 

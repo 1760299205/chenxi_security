@@ -1,7 +1,7 @@
 package com.chenxi.code.sys.user.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.chenxi.code.sys.role.entity.RoleEntity;
+import com.chenxi.code.sys.user.entity.RoleEntity;
 import com.chenxi.code.sys.user.entity.UserEntity;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
