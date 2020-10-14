@@ -1,0 +1,29 @@
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/chenxi?useUnicode=true&characterEncoding=utf-8&&serverTimezone=GMT
+    username: root
+    password: root
+  security:
+    user:
+      name: root
+      password: a
+server:
+  port: 8888
+
+mybatis-plus:
+  # shitisaomiaolujing
+  typeAliasesPackage: com.chenxi.code
+  # mapper xml  yingshewenjian
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+  # qidongjianyan
+  check-config-location: false
+
+# rizhi
+
+logging:
+  level:
+    com.example.demo22.dao: DEBUG
+    com.example.demo22: DEBUG
