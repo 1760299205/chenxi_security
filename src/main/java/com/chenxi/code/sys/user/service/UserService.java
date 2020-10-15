@@ -16,9 +16,6 @@ public class UserService  implements UserDetailsService {
     @Autowired
     private UserDao userDao;
 
-    @Autowired(required = false)
-    private PasswordEncoder passwordEncoder;
-
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         LambdaQueryWrapper<UserEntity> userWrapper = new LambdaQueryWrapper<>();
@@ -27,10 +24,7 @@ public class UserService  implements UserDetailsService {
         if (null == user){
             throw  new UsernameNotFoundException("账号不存在！");
         }
-//        String encodePassword = passwordEncoder.encode(user.getPassword());
-//        System.out.println("加密后的密码：" + encodePassword);
-//        user.setPassword(encodePassword);
-        user.setUserRoles(userDao.getUserRolesByUid(user.getId()));
+            user.setUserRoles(userDao.getUserRolesByUid(user.getId()));
         return user;
     }
 }
