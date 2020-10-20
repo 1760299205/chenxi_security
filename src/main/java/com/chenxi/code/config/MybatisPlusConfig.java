@@ -1,4 +1,4 @@
-package com.chenxi.config;
+package com.chenxi.code.config;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import org.springframework.context.annotation.Bean;

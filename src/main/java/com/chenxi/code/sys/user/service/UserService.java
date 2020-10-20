@@ -16,15 +16,25 @@ public class UserService  implements UserDetailsService {
     @Autowired
     private UserDao userDao;
 
+    /*
+    *自定义验证后续
+    *name:xurenxin
+    *time:2020/10/16 16:37
+    */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        //实现 UserDetailsService 这个类下面的 loadUserByUsername方法（前台输入的用户名），两个参数
         LambdaQueryWrapper<UserEntity> userWrapper = new LambdaQueryWrapper<>();
         userWrapper.eq(UserEntity::getUsername,username);
+        //查询用户是否存在
         UserEntity user =userDao.selectOne(userWrapper);
-        if (null == user){
+        if (null != user){
+            //获取用户权限 和 菜单
+            user.setUserRoles(userDao.getUserRolesByUid(user.getId()));
+            return user;
+        }else{
             throw  new UsernameNotFoundException("账号不存在！");
         }
-            user.setUserRoles(userDao.getUserRolesByUid(user.getId()));
-        return user;
+
     }
 }

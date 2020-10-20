@@ -6,12 +6,9 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/chenxi?useUnicode=true&characterEncoding=utf-8&&serverTimezone=GMT
     username: root
     password: root
-  security:
-    user:
-      name: root
-      password: a
+
 server:
-  port: 8888
+  port: 8886
 
 mybatis-plus:
   # shitisaomiaolujing
@@ -25,5 +22,4 @@ mybatis-plus:
 
 logging:
   level:
-    com.example.demo22.dao: DEBUG
-    com.example.demo22: DEBUG
+    com.chenxi: DEBUG
